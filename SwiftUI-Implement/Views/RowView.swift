@@ -24,11 +24,14 @@ struct RowView: View {
                     .font(.subheadline)
             }
             Spacer()
+            if programmer.favorite {
+                Image(systemName: "star.fill").foregroundColor(.yellow)
+            }
         }
     }
 }
 
 #Preview {
-    RowView(programmer: Programmer(id: 1, name: "Ricardo", lenguaje: "Swift, Java", avatar: Image(systemName: "person.fill")))
+    RowView(programmer: Programmer(id: 1, name: "Ricardo", lenguaje: "Swift, Java", avatar: Image(systemName: "person.fill"), favorite: true))
         .previewLayout(.fixed(width: 400, height: 600))
 }

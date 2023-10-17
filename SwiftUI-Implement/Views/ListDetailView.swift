@@ -21,10 +21,15 @@ struct ListDetailView: View {
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.green, lineWidth: 4))
                 .shadow(color: .gray, radius: 5)
-            Text(programmer.name)
-                .font(.largeTitle)
-            Text(String(programmer.id))
-                .font(.headline)
+            
+            HStack {
+                Text(String(programmer.id))
+                    .font(.headline)
+                Text(programmer.name)
+                    .font(.largeTitle)
+                
+            }.padding()
+            
             Text(programmer.lenguaje)
                 .font(.title)
             
@@ -34,5 +39,5 @@ struct ListDetailView: View {
 }
 
 #Preview {
-    ListDetailView(programmer: Programmer(id: 1, name: "Ricardo", lenguaje: "Swift, TCIB, T24, Java, .Net, JavaScript", avatar: Image(systemName: "person.fill")))
+    ListDetailView(programmer: Programmer(id: 1, name: "Ricardo", lenguaje: "Swift, TCIB, T24, Java, .Net, JavaScript", avatar: Image(systemName: "person.fill"), favorite: true))
 }
